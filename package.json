@@ -1,0 +1,82 @@
+{
+  "name": "electron-conf",
+  "version": "1.0.0-alpha.0",
+  "description": "Simple data persistence for your Electron app - save and load user settings, app state, cache, etc",
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs"
+    },
+    "./main": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs"
+    },
+    "./preload": {
+      "types": "./dist/preload.d.ts",
+      "import": "./dist/preload.mjs",
+      "require": "./dist/preload.cjs"
+    },
+    "./renderer": {
+      "types": "./dist/renderer.d.ts",
+      "import": "./dist/renderer.mjs",
+      "require": "./dist/renderer.cjs"
+    }
+  },
+  "author": "Alex Wei <https://github.com/alex8088>",
+  "license": "MIT",
+  "homepage": "https://github.com/alex8088/electron-conf#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/electron-conf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/electron-conf/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "config",
+    "settings",
+    "store",
+    "storage",
+    "electron"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --ext .js,.cjs,.mjs,.ts,.cts,.mts src/**",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run lint && rollup -c rollup.config.ts --configPlugin typescript",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "electron": ">=13.0.0"
+  },
+  "dependencies": {
+    "ajv": "^8.13.0",
+    "atomically": "^2.0.3",
+    "dot-prop": "^9.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^18.19.33",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "rollup": "^4.17.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-rm": "^1.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
