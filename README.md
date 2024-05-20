@@ -96,7 +96,8 @@ return a new instance.
 
 ### Constructor Options
 
-> [!NOTE] > `Conf` for the renderer process, only supports the `name` option.
+> [!NOTE]
+> `Conf` for the renderer process, only supports the `name` option.
 
 #### `dir`
 
