@@ -10,7 +10,7 @@ electron-conf is a fork of [conf](https://github.com/sindresorhus/conf) (behind 
 - ✅ Read data form disk once, ~100x faster
 - ✅ Simpler migration strategy
 - ✅ Safer to use it in Electron renderer (no nodeIntegration)
-- ✅ Written in TypeScript, and support CommonJS and ESM. For Electron 13.x and higher.
+- ✅ Written in TypeScript, and support CommonJS and ESM. For Electron 15.x and higher.
 - ❌ No watch
 - ❌ No encryption
 
