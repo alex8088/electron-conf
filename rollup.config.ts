@@ -34,7 +34,7 @@ export default defineConfig([
     external,
     plugins: [
       rm('dist', 'buildStart'),
-      resolve(),
+      resolve({ exportConditions: ['node', 'default', 'module', 'import'] }),
       commonjs(),
       ts({
         compilerOptions: {
