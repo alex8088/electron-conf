@@ -27,6 +27,19 @@
       "require": "./dist/renderer.cjs"
     }
   },
+  "typesVersions": {
+    "*": {
+      "main": [
+        "./dist/main.d.ts"
+      ],
+      "preload": [
+        "./dist/preload.d.ts"
+      ],
+      "renderer": [
+        "./dist/renderer.d.ts"
+      ]
+    }
+  },
   "author": "Alex Wei <https://github.com/alex8088>",
   "license": "MIT",
   "homepage": "https://github.com/alex8088/electron-conf#readme",
