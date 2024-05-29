@@ -296,7 +296,7 @@ unsubscribe()
 ```
 
 > [!TIP]
-> Not available in rendering process
+> Not available in renderer
 
 #### `.onDidAnyChange(callback)`
 
@@ -315,14 +315,14 @@ unsubscribe()
 ```
 
 > [!TIP]
-> Not available in rendering process
+> Not available in renderer
 
 #### `.fileName`
 
 Get the configuration file path.
 
 > [!TIP]
-> Not available in rendering process
+> Not available in renderer
 
 ## Credits
 
