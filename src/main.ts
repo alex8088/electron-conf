@@ -20,8 +20,13 @@ export class Conf<
   /**
    * Register the config ipc handler for use by renderer.
    */
-  registerRendererListener(): void {
-    const channel = `__electron_conf_${this.name}_handler__`
+
+  /**
+   * Register the config ipc handler for use by renderer.
+   * @param name The name used to define the renderer process Conf. Default to `config`.
+   */
+  registerRendererListener(name?: string): void {
+    const channel = `__electron_conf_${name || this.name}_handler__`
     if (!ipcMain.eventNames().some((e) => e === channel)) {
       ipcMain.handle(
         channel,

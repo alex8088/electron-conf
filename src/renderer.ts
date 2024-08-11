@@ -2,7 +2,8 @@ import type { ConfAPI } from './types'
 
 type ConfOptions = {
   /**
-   * Configuration file name without extension.
+   * The configuration file name should be the name of the listener
+   * registered by the main process.
    *
    * @default 'config'
    */
