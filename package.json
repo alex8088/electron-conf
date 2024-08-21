@@ -1,6 +1,6 @@
 {
   "name": "electron-conf",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simple data persistence for your Electron app - save and load user settings, app state, cache, etc",
   "main": "./dist/main.cjs",
   "module": "./dist/main.mjs",
