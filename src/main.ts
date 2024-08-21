@@ -32,7 +32,7 @@ export class Conf<
         channel,
         (_, action: Action, key: any, value?: unknown) => {
           if (action === 'get') {
-            return this.get(key)
+            return this.get(key, value)
           }
 
           if (action === 'set') {

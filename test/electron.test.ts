@@ -88,8 +88,9 @@ it('default path', async () => {
 })
 
 it('supports renderer', async () => {
-  const baz = await context.rpc<number>('renderer')
-  expect(baz).toBe(1)
+  const result = await context.rpc<{ baz: number; zoo: string }>('renderer')
+  expect(result.baz).toBe(1)
+  expect(result.zoo).toBe('zoo')
 })
 
 afterAll(async () => {

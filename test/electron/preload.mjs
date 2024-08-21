@@ -6,7 +6,7 @@ exposeConf()
 
 try {
   contextBridge.exposeInMainWorld('api', {
-    did: () => ipcRenderer.send('did')
+    did: (arg) => ipcRenderer.send('did', arg)
   })
 } catch (error) {
   console.error(error)

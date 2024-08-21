@@ -17,9 +17,9 @@ function createWindow() {
 
     win.loadFile(join(import.meta.dirname, './index.html'))
 
-    ipcMain.once('did', () => {
+    ipcMain.once('did', (_, arg) => {
+      resolve(arg)
       win.close()
-      resolve()
     })
   })
 }
@@ -42,7 +42,10 @@ app.whenReady().then(() => {
   })
 
   rpc.register('renderer', async () => {
-    await createWindow()
-    return conf.get('bar.baz')
+    const zoo = await createWindow()
+    return {
+      baz: conf.get('bar.baz'),
+      zoo
+    }
   })
 })
