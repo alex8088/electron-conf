@@ -84,15 +84,20 @@ export function useConf(
   session: Session = _session.defaultSession,
   options: Options = { esModule: false }
 ): void {
-  session.setPreloads([
-    ...session.getPreloads(),
-    fileURLToPath(
-      new URL(
-        options.esModule
-          ? 'electron-conf-preload.mjs'
-          : 'electron-conf-preload.cjs',
-        import.meta.url
-      )
+  const electronVer = process.versions.electron
+  const electronMajorVer = electronVer ? parseInt(electronVer.split('.')[0]) : 0
+  const preloadPath = fileURLToPath(
+    new URL(
+      options.esModule
+        ? 'electron-conf-preload.mjs'
+        : 'electron-conf-preload.cjs',
+      import.meta.url
     )
-  ])
+  )
+
+  if (electronMajorVer >= 35) {
+    session.registerPreloadScript({ type: 'frame', filePath: preloadPath })
+  } else {
+    session.setPreloads([...session.getPreloads(), preloadPath])
+  }
 }
