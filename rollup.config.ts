@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { createRequire } from 'node:module'
 import { defineConfig } from 'rollup'
 import resolve from '@rollup/plugin-node-resolve'
@@ -42,7 +43,16 @@ export default defineConfig([
           declaration: true,
           outDir: 'dist/types'
         }
-      })
+      }),
+      {
+        name: 'import-meta-url',
+        resolveImportMeta(property, { format }) {
+          if (property === 'url' && format === 'cjs') {
+            return `require("url").pathToFileURL(__filename).href`
+          }
+          return null
+        }
+      }
     ]
   },
   {
